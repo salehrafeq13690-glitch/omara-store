@@ -1,0 +1,209 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر عُمراء | Omara Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F5E6BE; /* لون خلفية شعارك */
+            --primary-dark: #1B2613; /* لون الخط في شعارك */
+            --accent-gold: #D4AF37;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; transition: 0.3s; }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-dark);
+            margin: 0;
+            padding-bottom: 70px; /* مساحة للقائمة السفلية للجوال */
+        }
+
+        /* الهيدر والشعار */
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .logo-container img {
+            max-width: 180px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* شريط التنقل السفلي (مناسب للجوال) */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: var(--primary-dark);
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            z-index: 1000;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .nav-item {
+            color: var(--bg-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* الصفحات المحتوية */
+        .page {
+            display: none;
+            padding: 20px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .active-page { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* شبكة الصور والمنتجات */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* صورتين بجانب بعض للجوال */
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .product-info { padding: 10px; }
+        
+        .price { color: var(--accent-gold); font-weight: bold; display: block; margin-bottom: 10px; }
+
+        .order-btn {
+            background: #25D366; /* لون واتساب */
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            display: inline-block;
+        }
+
+        /* صفحة الطلب الخاصة */
+        .order-page-container {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2 { font-family: 'Amiri', serif; font-size: 28px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/LhyxXhR/Screenshot.jpg" alt="متجر عُمراء">
+            <h1 style="font-family: 'Amiri'; margin: 5px 0;">متجر عُمراء</h1>
+        </div>
+    </header>
+
+    <main id="main-content">
+        
+        <div id="home" class="page active-page">
+            <h2>مرحباً بك في عالم التميز</h2>
+            <p>نجمع لك بين عبق العطور الفاخرة وأحدث تصاميم شي إن.</p>
+            <div class="gallery-grid">
+                <div class="product-card"><img src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?w=400"></div>
+                <div class="product-card"><img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400"></div>
+                <div class="product-card"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400"></div>
+                <div class="product-card"><img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400"></div>
+            </div>
+        </div>
+
+        <div id="perfumes" class="page">
+            <h2>قسم العطور الملكية</h2>
+            <div class="gallery-grid" id="perfume-list">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400">
+                    <div class="product-info">
+                        <span>عطر العود الكمبودي</span>
+                        <span class="price">150 ر.ي</span>
+                        <a href="https://wa.me/967779826404?text=أريد طلب عطر العود" class="order-btn">اطلب الآن</a>
+                    </div>
+                </div>
+                <div class="product-card"><img src="https://images.unsplash.com/photo-1588405864443-f71bc513bb6d?w=400"><div class="product-info"><span>عطر اللافندر</span><a href="https://wa.me/967779826404" class="order-btn">اطلب</a></div></div>
+            </div>
+        </div>
+
+        <div id="shein" class="page">
+            <h2>طلبات شي إن (SHEIN)</h2>
+            <p>صور من أحدث الصيحات المتاحة للطلب:</p>
+            <div class="gallery-grid">
+                <div class="product-card"><img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=400"></div>
+                <div class="product-card"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400"></div>
+                <div class="product-card"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400"></div>
+                <div class="product-card"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400"></div>
+            </div>
+        </div>
+
+        <div id="order" class="page">
+            <div class="order-page-container">
+                <h2>تأكيد الطلب</h2>
+                <p>اضغط على الزر أدناه ليتم تحويلك مباشرة للواتساب لإتمام طلبك من متجر عُمراء.</p>
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="80" style="margin: 20px;">
+                <br>
+                <a href="https://wa.me/967779826404" class="order-btn" style="padding: 15px 40px; font-size: 18px;">
+                    ابدأ المحادثة الآن
+                </a>
+                <p style="margin-top: 20px; font-size: 12px;">رقم التواصل: 779826404</p>
+            </div>
+        </div>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item" onclick="showPage('home')">🏠<br>الرئيسية</a>
+        <a href="#" class="nav-item" onclick="showPage('perfumes')">✨<br>عطورنا</a>
+        <a href="#" class="nav-item" onclick="showPage('shein')">🛍️<br>شي إن</a>
+        <a href="#" class="nav-item" onclick="showPage('order')">📩<br>الطلب</a>
+    </nav>
+
+    <script>
+        function showPage(pageId) {
+            // إخفاء كل الصفحات
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.classList.remove('active-page'));
+            
+            // إظهار الصفحة المختارة
+            document.getElementById(pageId).classList.add('active-page');
+            
+            // التمرير للأعلى
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>
